@@ -1,0 +1,21 @@
+{
+  "name": "znuser/registration",
+  "type": "extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ZnDeveloper",
+      "email": "zndev@ya.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    
+  },
+  "autoload": {
+    "psr-4": {
+      "ZnUser\\Registration\\": "src",
+      "ZnUser\\Registration\\Tests\\": "tests"
+    }
+  }
+}
