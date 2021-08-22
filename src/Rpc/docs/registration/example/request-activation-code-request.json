@@ -1,0 +1,14 @@
+{
+  "jsonrpc": "2.0",
+  "method": "userRegistration.requestActivationCode",
+  "params": {
+    "meta": {
+      "version": 1,
+      "Language":"ru",
+      "timestamp": "2021-05-26T15:59:16+0000"
+    },
+    "body": {
+      "email": "admin@ex.com"
+    }
+  }
+}

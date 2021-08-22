@@ -1,0 +1,16 @@
+{
+  "jsonrpc": "2.0",
+  "method": "userRegistration.createAccount",
+  "params": {
+    "meta": {
+      "version": 1,
+      "Language":"ru"
+    },
+    "body": {
+      "email": "admin@ex.com",
+      "code": "465956",
+      "password": "Wwqq1$",
+      "passwordConfirm": "Wwqq1$"
+    }
+  }
+}
