@@ -20,6 +20,7 @@ class RegistrationController extends BaseRpcController
 
     public function requestActivationCode(RpcRequestEntity $requestEntity): RpcResponseEntity
     {
+
         $form = new RequestActivationCodeForm();
         EntityHelper::setAttributes($form, $requestEntity->getParams());
         $this->service->requestActivationCode($form);
