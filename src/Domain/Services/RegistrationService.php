@@ -3,6 +3,7 @@
 namespace ZnUser\Registration\Domain\Services;
 
 use App\Common\Enums\Rbac\ApplicationRoleEnum;
+use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Registration\Domain\Forms\CreateAccountForm;
 use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
 use ZnUser\Registration\Domain\Interfaces\Services\RegistrationServiceInterface;
@@ -165,7 +166,7 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
 
         $assignmentEntity = new AssignmentEntity();
         $assignmentEntity->setIdentityId($identityEntity->getId());
-        $assignmentEntity->setItemName(ApplicationRoleEnum::USER);
+        $assignmentEntity->setItemName(SystemRoleEnum::USER);
         $this->getEntityManager()->persist($assignmentEntity);
 
         $passwordHash = $this->passwordHasher->hash($registrationForm->getPassword());
