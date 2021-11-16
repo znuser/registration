@@ -144,7 +144,7 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
         }
     }
 
-    public function createAccount(CreateAccountForm $registrationForm)
+    public function createAccount(CreateAccountForm $registrationForm): IdentityEntityInterface
     {
         $this->checkCredentialExists($registrationForm);
 
@@ -187,5 +187,7 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
             $credentialEntity->setValidation($passwordHash);
             $this->getEntityManager()->persist($credentialEntity);
         }
+
+        return $identityEntity;
     }
 }
