@@ -68,7 +68,7 @@ class CreateAccountForm implements ValidateEntityByMetadataInterface, BuildFormI
 
     public function setEmail($email): void
     {
-        $this->email = $email;
+        $this->email = trim($email);
     }
 
     public function getPhone()
@@ -78,7 +78,7 @@ class CreateAccountForm implements ValidateEntityByMetadataInterface, BuildFormI
 
     public function setPhone($phone): void
     {
-        $this->phone = $phone;
+        $this->phone = trim($phone);
     }
 
     public function getPassword()
@@ -88,7 +88,7 @@ class CreateAccountForm implements ValidateEntityByMetadataInterface, BuildFormI
 
     public function setPassword($password): void
     {
-        $this->password = $password;
+        $this->password = trim($password);
     }
 
     public function getPasswordConfirm()
@@ -98,7 +98,7 @@ class CreateAccountForm implements ValidateEntityByMetadataInterface, BuildFormI
 
     public function setPasswordConfirm($passwordConfirm): void
     {
-        $this->passwordConfirm = $passwordConfirm;
+        $this->passwordConfirm = trim($passwordConfirm);
     }
 
     public function getCode()
@@ -108,6 +108,6 @@ class CreateAccountForm implements ValidateEntityByMetadataInterface, BuildFormI
 
     public function setCode($code): void
     {
-        $this->code = $code;
+        $this->code = trim($code);
     }
 }
