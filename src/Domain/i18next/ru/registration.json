@@ -7,6 +7,10 @@
     "credential_already_exists": "Аккаунт существует"
   },
   "notify": {
+    "registration_with_password": {
+      "subject": "Регистрация",
+      "content": "Вы успешно зарегистрированы.\nДанные для входа в систему:\nСайт: {{site}}\nЛогин: {{login}}\nПароль: {{password}}"
+    },
     "activation_code": {
       "subject": "Регистрация",
       "content": "Регистрация. Код активации: {{code}}",
