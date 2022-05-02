@@ -15,7 +15,7 @@ use ZnBundle\Notify\Domain\Interfaces\Services\SmsServiceInterface;
 use ZnBundle\User\Domain\Entities\ConfirmEntity;
 use ZnBundle\User\Domain\Entities\CredentialEntity;
 use ZnBundle\User\Domain\Enums\ConfirmActionEnum;
-use ZnBundle\User\Domain\Interfaces\Entities\IdentityEntityInterface;
+use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnBundle\User\Domain\Interfaces\Services\ConfirmServiceInterface;
 use ZnBundle\User\Domain\Interfaces\Services\CredentialServiceInterface;
 use ZnCore\Base\Enums\Measure\TimeEnum;
