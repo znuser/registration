@@ -13,6 +13,8 @@ return [
         'handler_class' => RegistrationController::class,
         'handler_method' => 'requestActivationCode',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
     [
         'method_name' => 'userRegistration.createAccount',
@@ -23,5 +25,7 @@ return [
         'handler_class' => RegistrationController::class,
         'handler_method' => 'createAccount',
         'status_id' => 100,
+        'title' => null,
+        'description' => null,
     ],
 ];
