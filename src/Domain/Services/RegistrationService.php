@@ -23,7 +23,7 @@ use ZnCore\Base\Enums\Measure\TimeEnum;
 use ZnCore\Base\Exceptions\AlreadyExistsException;
 use ZnCore\Base\Exceptions\NotFoundException;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
-use ZnCore\Domain\Base\BaseService;
+use ZnCore\Base\Libs\Service\Base\BaseService;
 use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Base\Libs\Validation\Helpers\ValidationHelper;
 use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
