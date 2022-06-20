@@ -136,12 +136,12 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
 
         if ($hasByEmail) {
             $message = I18Next::t('user', 'registration.user_already_exists_and_activated');
-            UnprocessableHelper::throwUnprocessable(['email' => $message]);
+            UnprocessableHelper::throwItems(['email' => $message]);
         }
 
         if ($hasByPhone) {
             $message = I18Next::t('user', 'registration.user_already_exists_and_activated');
-            UnprocessableHelper::throwUnprocessable(['phone' => $message]);
+            UnprocessableHelper::throwItems(['phone' => $message]);
         }
     }
 
@@ -154,11 +154,11 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
             $isVerify = $this->confirmService->isVerify($registrationForm->getEmail(), ConfirmActionEnum::REGISTRATION, $registrationForm->getCode());
             if (!$isVerify) {
                 $message = I18Next::t('user', 'registration.invalid_activation_code');
-                UnprocessableHelper::throwUnprocessable(['activation_code' => $message]);
+                UnprocessableHelper::throwItems(['activation_code' => $message]);
             }
         } catch (NotFoundException $e) {
             $message = I18Next::t('user', 'registration.temp_user_not_found');
-            UnprocessableHelper::throwUnprocessable(['phone' => $message]);
+            UnprocessableHelper::throwItems(['phone' => $message]);
         }
         /** @var IdentityEntityInterface $identityEntity */
         $identityEntity = $this->getEntityManager()->createEntity(IdentityEntityInterface::class);
