@@ -9,11 +9,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
-use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnLib\Web\Symfony4\MicroApp\Interfaces\BuildFormInterface;
 use ZnUser\Password\Domain\Helpers\PasswordValidatorHelper;
 
-class RegistrationForm implements ValidateEntityByMetadataInterface, BuildFormInterface
+class RegistrationForm implements ValidationByMetadataInterface, BuildFormInterface
 {
 
     private $email;

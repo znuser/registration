@@ -8,10 +8,10 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
-use ZnCore\Base\Libs\Entity\Interfaces\ValidateEntityByMetadataInterface;
+use ZnCore\Base\Libs\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnLib\Web\Symfony4\MicroApp\Interfaces\BuildFormInterface;
 
-class ActivationCodeForm implements ValidateEntityByMetadataInterface, BuildFormInterface
+class ActivationCodeForm implements ValidationByMetadataInterface, BuildFormInterface
 {
 
     private $code;

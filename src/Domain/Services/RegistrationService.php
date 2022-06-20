@@ -3,7 +3,7 @@
 namespace ZnUser\Registration\Domain\Services;
 
 use App\Common\Enums\Rbac\ApplicationRoleEnum;
-use ZnCore\Domain\Helpers\UnprocessableHelper;
+use ZnCore\Base\Libs\Validation\Helpers\UnprocessableHelper;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Registration\Domain\Forms\CreateAccountForm;
 use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
@@ -24,9 +24,9 @@ use ZnCore\Base\Exceptions\AlreadyExistsException;
 use ZnCore\Base\Exceptions\NotFoundException;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 use ZnCore\Domain\Base\BaseService;
-use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
-use ZnCore\Domain\Helpers\ValidationHelper;
-use ZnCore\Domain\Interfaces\Libs\EntityManagerInterface;
+use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
+use ZnCore\Base\Libs\Validation\Helpers\ValidationHelper;
+use ZnCore\Base\Libs\EntityManager\Interfaces\EntityManagerInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 
 class RegistrationService extends BaseService implements RegistrationServiceInterface
