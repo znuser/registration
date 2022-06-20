@@ -3,6 +3,7 @@
 namespace ZnUser\Registration\Domain\Services;
 
 use App\Common\Enums\Rbac\ApplicationRoleEnum;
+use ZnCore\Domain\Helpers\UnprocessableHelper;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Registration\Domain\Forms\CreateAccountForm;
 use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
@@ -135,12 +136,12 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
 
         if ($hasByEmail) {
             $message = I18Next::t('user', 'registration.user_already_exists_and_activated');
-            ValidationHelper::throwUnprocessable(['email' => $message]);
+            UnprocessableHelper::throwUnprocessable(['email' => $message]);
         }
 
         if ($hasByPhone) {
             $message = I18Next::t('user', 'registration.user_already_exists_and_activated');
-            ValidationHelper::throwUnprocessable(['phone' => $message]);
+            UnprocessableHelper::throwUnprocessable(['phone' => $message]);
         }
     }
 
@@ -153,11 +154,11 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
             $isVerify = $this->confirmService->isVerify($registrationForm->getEmail(), ConfirmActionEnum::REGISTRATION, $registrationForm->getCode());
             if (!$isVerify) {
                 $message = I18Next::t('user', 'registration.invalid_activation_code');
-                ValidationHelper::throwUnprocessable(['activation_code' => $message]);
+                UnprocessableHelper::throwUnprocessable(['activation_code' => $message]);
             }
         } catch (NotFoundException $e) {
             $message = I18Next::t('user', 'registration.temp_user_not_found');
-            ValidationHelper::throwUnprocessable(['phone' => $message]);
+            UnprocessableHelper::throwUnprocessable(['phone' => $message]);
         }
         /** @var IdentityEntityInterface $identityEntity */
         $identityEntity = $this->getEntityManager()->createEntity(IdentityEntityInterface::class);
