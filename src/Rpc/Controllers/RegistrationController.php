@@ -3,7 +3,7 @@
 namespace ZnUser\Registration\Rpc\Controllers;
 
 use Psr\Container\ContainerInterface;
-use ZnCore\Base\Libs\Container\Traits\ContainerAwareTrait;
+use ZnCore\Base\Container\Traits\ContainerAwareTrait;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
 use ZnLib\Rpc\Domain\Entities\RpcRequestEntity;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;

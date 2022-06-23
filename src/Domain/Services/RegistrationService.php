@@ -3,7 +3,7 @@
 namespace ZnUser\Registration\Domain\Services;
 
 use App\Common\Enums\Rbac\ApplicationRoleEnum;
-use ZnCore\Base\Libs\Validation\Helpers\UnprocessableHelper;
+use ZnCore\Base\Validation\Helpers\UnprocessableHelper;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Registration\Domain\Forms\CreateAccountForm;
 use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
@@ -19,13 +19,13 @@ use ZnBundle\User\Domain\Enums\ConfirmActionEnum;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnBundle\User\Domain\Interfaces\Services\ConfirmServiceInterface;
 use ZnBundle\User\Domain\Interfaces\Services\CredentialServiceInterface;
-use ZnCore\Base\Libs\Measure\Enums\TimeEnum;
+use ZnCore\Base\Measure\Enums\TimeEnum;
 use ZnCore\Domain\Entity\Exceptions\AlreadyExistsException;
 use ZnCore\Domain\Entity\Exceptions\NotFoundException;
-use ZnCore\Base\Libs\I18Next\Facades\I18Next;
+use ZnCore\Base\I18Next\Facades\I18Next;
 use ZnCore\Domain\Service\Base\BaseService;
-use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Base\Libs\Validation\Helpers\ValidationHelper;
+use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
+use ZnCore\Base\Validation\Helpers\ValidationHelper;
 use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 
