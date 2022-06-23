@@ -19,7 +19,7 @@ use ZnBundle\User\Domain\Enums\ConfirmActionEnum;
 use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnBundle\User\Domain\Interfaces\Services\ConfirmServiceInterface;
 use ZnBundle\User\Domain\Interfaces\Services\CredentialServiceInterface;
-use ZnCore\Base\Measure\Enums\TimeEnum;
+use ZnCore\Base\Time\Enums\TimeEnum;
 use ZnCore\Domain\Entity\Exceptions\AlreadyExistsException;
 use ZnCore\Domain\Entity\Exceptions\NotFoundException;
 use ZnCore\Base\I18Next\Facades\I18Next;
