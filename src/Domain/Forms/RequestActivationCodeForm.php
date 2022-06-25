@@ -7,7 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnCore\Base\I18Next\Facades\I18Next;
+use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnLib\Web\Symfony4\MicroApp\Interfaces\BuildFormInterface;
 
