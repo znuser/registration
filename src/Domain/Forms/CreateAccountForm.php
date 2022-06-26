@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Base\Validation\Interfaces\ValidationByMetadataInterface;
-use ZnLib\Web\Components\Form\Interfaces\BuildFormInterface;
+use ZnLib\Web\Form\Interfaces\BuildFormInterface;
 use ZnUser\Password\Domain\Helpers\PasswordValidatorHelper;
 
 class CreateAccountForm implements ValidationByMetadataInterface, BuildFormInterface
