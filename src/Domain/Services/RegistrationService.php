@@ -63,7 +63,7 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
 
         /*if ($requestActivationCodeForm->getEmail()) {
             try {
-                $credentialEntity = $this->credentialService->oneByCredentialValue($requestActivationCodeForm->getEmail());
+                $credentialEntity = $this->credentialService->findOneByCredentialValue($requestActivationCodeForm->getEmail());
                 $e = new UnprocessibleEntityException();
                 $e->add('email', I18Next::t('user.registration', 'registration.message.credential_already_exists'));
                 throw $e;
@@ -72,7 +72,7 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
         }
         if ($requestActivationCodeForm->getPhone()) {
             try {
-                $credentialEntity = $this->credentialService->oneByCredentialValue($requestActivationCodeForm->getPhone());
+                $credentialEntity = $this->credentialService->findOneByCredentialValue($requestActivationCodeForm->getPhone());
                 $e = new UnprocessibleEntityException();
                 $e->add('phone', I18Next::t('user.registration', 'registration.message.credential_already_exists'));
                 throw $e;
