@@ -113,9 +113,9 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
                 $smsEntity->setMessage($content);
                 $this->smsService->push($smsEntity);
             }
-            //$this->confirmService->sendConfirmBySms($confirmEntity, ['user', 'registration.activate_account_sms']);
+            //$this->confirmService->sendConfirmBySms($confirmEntity, ['user.registration', 'registration.activate_account_sms']);
         } catch (AlreadyExistsException $e) {
-            $message = I18Next::t('user', 'registration.user_already_exists_but_not_activation_time_left', ['timeLeft' => $e->getMessage()]);
+            $message = I18Next::t('user.registration', 'registration.user_already_exists_but_not_activation_time_left', ['timeLeft' => $e->getMessage()]);
             throw new AlreadyExistsException($message);
         }
 
@@ -135,12 +135,12 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
         $hasByPhone = $registrationForm->getPhone() && $this->credentialService->hasByCredentialValue($registrationForm->getPhone());
 
         if ($hasByEmail) {
-            $message = I18Next::t('user', 'registration.user_already_exists_and_activated');
+            $message = I18Next::t('user.registration', 'registration.user_already_exists_and_activated');
             UnprocessableHelper::throwItems(['email' => $message]);
         }
 
         if ($hasByPhone) {
-            $message = I18Next::t('user', 'registration.user_already_exists_and_activated');
+            $message = I18Next::t('user.registration', 'registration.user_already_exists_and_activated');
             UnprocessableHelper::throwItems(['phone' => $message]);
         }
     }
@@ -153,11 +153,11 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
         try {
             $isVerify = $this->confirmService->isVerify($registrationForm->getEmail(), ConfirmActionEnum::REGISTRATION, $registrationForm->getCode());
             if (!$isVerify) {
-                $message = I18Next::t('user', 'registration.invalid_activation_code');
+                $message = I18Next::t('user.registration', 'registration.invalid_activation_code');
                 UnprocessableHelper::throwItems(['activation_code' => $message]);
             }
         } catch (NotFoundException $e) {
-            $message = I18Next::t('user', 'registration.temp_user_not_found');
+            $message = I18Next::t('user.registration', 'registration.temp_user_not_found');
             UnprocessableHelper::throwItems(['phone' => $message]);
         }
         /** @var IdentityEntityInterface $identityEntity */

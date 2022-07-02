@@ -1,0 +1,43 @@
+{
+  "title": "Тіркеу",
+  "create_title": "Аккаунт құру",
+  "message": {
+    "activation_code_send_success": "Код активации отправлен!",
+    "registration_success": "Тіркеу сәтті аяқталды",
+    "credential_already_exists": "Аккаунт существует"
+  },
+  "notify": {
+    "registration_with_password": {
+      "subject": "Регистрация",
+      "content": "Вы успешно зарегистрированы.\nДанные для входа в систему:\nСайт: {{site}}\nЛогин: {{login}}\nПароль: {{password}}"
+    },
+    "activation_code": {
+      "subject": "Регистрация",
+      "content": "Регистрация. Код активации: {{code}}",
+      "shortContent": "Регистрация. Код активации: {{code}}"
+    }
+  },
+
+  "set_password_title": "Кіру мәліметтері",
+  "set_password_text": "Құпия сөзіңізді және поштаңызды енгізіңіз",
+  "set_name_title": "Сіз кімсіз?",
+  "set_name_text": "Фамилияңызды енгізіңіз",
+  "set_address_title": "Сіз қайдасыз?",
+  "set_address_text": "Мекенжайды енгізіңіз",
+  "create_action": "Жалғастыру",
+  "save_auth_data_action": "Тіркеуді аяқтау",
+  "activation_code_hint": "СМС-тегі код",
+  "send_activation_code": "Кодты алу",
+  "sms_not_sended": "Смс-хабарлама жіберілмеді",
+  "sms_with_code_sended": "Белсендіру коды сізге SMS арқылы жіберілді!",
+  "activate_account_sms": "Тіркеу. Белсендіру коды: {{code}}",
+  "login_not_valid": "Кіру форматы жарамсыз",
+  "invalid_activation_code": "Іске қосу коды жарамсыз",
+  "temp_user_not_found": "Уақытша пайдаланушы аккаунты табылмады",
+  "user_already_exists_and_activated": "Пайдаланушы бұрын тіркеліп, белсендірілген",
+  "user_already_exists_but_not_activation": "Белсендіру коды бар SMS сіздің нөміріңізге бұрын жіберілген",
+  "user_already_exists_but_not_activation_time_left": "Белсендіру коды бар SMS сіздің нөміріңізге ертерек жіберілген. Сіз {{timeLeft}} секундтан кейін қайталай аласыз.",
+  "user_dont_create_by_unknown_reason": "Пайдаланушы жасалмаған, кейінірек қайталап көріңіз",
+  "user_create_success": "Сіз сәтті тіркелдіңіз",
+  "activation_success": "Аккаунт белсендірілді"
+}
