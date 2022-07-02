@@ -31,7 +31,7 @@ class RegistrationForm implements ValidationByMetadataInterface, BuildFormInterf
         $metadata->addPropertyConstraint('passwordConfirm', new Assert\NotBlank);
         $metadata->addPropertyConstraint('passwordConfirm', new Assert\EqualTo([
             'propertyPath' => 'password',
-            'message' => I18Next::t('user_security', 'change-password.message.does_not_match_the_new_password'),
+            'message' => I18Next::t('user.password', 'change-password.message.does_not_match_the_new_password'),
         ]));
     }
 
