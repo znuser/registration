@@ -8,7 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Mapping\ClassMetadata;
-use ZnLib\Components\I18Next\Facades\I18Next;
+use ZnLib\I18Next\Facades\I18Next;
 use ZnCore\Validation\Interfaces\ValidationByMetadataInterface;
 use ZnLib\Web\Form\Interfaces\BuildFormInterface;
 use ZnUser\Password\Domain\Helpers\PasswordValidatorHelper;
