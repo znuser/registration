@@ -3,7 +3,7 @@
 namespace ZnUser\Registration\Domain\Services;
 
 use App\Common\Enums\Rbac\ApplicationRoleEnum;
-use ZnCore\Base\Validation\Helpers\UnprocessableHelper;
+use ZnCore\Validation\Helpers\UnprocessableHelper;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Registration\Domain\Forms\CreateAccountForm;
 use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
@@ -20,13 +20,13 @@ use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnUser\Confirm\Domain\Interfaces\Services\ConfirmServiceInterface;
 use ZnUser\Authentication\Domain\Interfaces\Services\CredentialServiceInterface;
 use ZnLib\Components\Time\Enums\TimeEnum;
-use ZnCore\Domain\Entity\Exceptions\AlreadyExistsException;
-use ZnCore\Domain\Entity\Exceptions\NotFoundException;
+use ZnCore\Entity\Exceptions\AlreadyExistsException;
+use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Domain\Service\Base\BaseService;
-use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Base\Validation\Helpers\ValidationHelper;
-use ZnCore\Domain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
+use ZnCore\Validation\Helpers\ValidationHelper;
+use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 
 class RegistrationService extends BaseService implements RegistrationServiceInterface
