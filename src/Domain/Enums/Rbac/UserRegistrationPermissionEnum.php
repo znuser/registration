@@ -2,7 +2,7 @@
 
 namespace ZnUser\Registration\Domain\Enums\Rbac;
 
-use ZnCore\Base\Enum\Interfaces\GetLabelsInterface;
+use ZnCore\Enum\Interfaces\GetLabelsInterface;
 
 class UserRegistrationPermissionEnum implements GetLabelsInterface
 {
