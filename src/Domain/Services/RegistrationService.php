@@ -23,10 +23,10 @@ use ZnLib\Components\Time\Enums\TimeEnum;
 use ZnCore\Entity\Exceptions\AlreadyExistsException;
 use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnLib\I18Next\Facades\I18Next;
-use ZnCore\Service\Base\BaseService;
+use ZnDomain\Service\Base\BaseService;
 use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Validation\Helpers\ValidationHelper;
-use ZnCore\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 
 class RegistrationService extends BaseService implements RegistrationServiceInterface
