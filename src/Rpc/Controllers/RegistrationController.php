@@ -3,8 +3,8 @@
 namespace ZnUser\Registration\Rpc\Controllers;
 
 use Psr\Container\ContainerInterface;
+use ZnCore\Code\Helpers\PropertyHelper;
 use ZnCore\Container\Traits\ContainerAwareTrait;
-use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnLib\Rpc\Domain\Entities\RpcRequestEntity;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;
 use ZnLib\Rpc\Rpc\Base\BaseRpcController;
@@ -26,7 +26,7 @@ class RegistrationController extends BaseRpcController
     {
 
         $form = new RequestActivationCodeForm();
-        EntityHelper::setAttributes($form, $requestEntity->getParams());
+        PropertyHelper::setAttributes($form, $requestEntity->getParams());
         $this->service->requestActivationCode($form);
         return new RpcResponseEntity();
     }
@@ -34,7 +34,7 @@ class RegistrationController extends BaseRpcController
     public function createAccount(RpcRequestEntity $requestEntity): RpcResponseEntity
     {
         $createAccountForm = $this->container->get(CreateAccountForm::class);
-        EntityHelper::setAttributes($createAccountForm, $requestEntity->getParams());
+        PropertyHelper::setAttributes($createAccountForm, $requestEntity->getParams());
         $this->service->createAccount($createAccountForm);
         return new RpcResponseEntity();
     }
