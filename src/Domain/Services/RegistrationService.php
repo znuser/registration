@@ -3,7 +3,7 @@
 namespace ZnUser\Registration\Domain\Services;
 
 use App\Common\Enums\Rbac\ApplicationRoleEnum;
-use ZnCore\Validation\Helpers\UnprocessableHelper;
+use ZnDomain\Validator\Helpers\UnprocessableHelper;
 use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
 use ZnUser\Registration\Domain\Forms\CreateAccountForm;
 use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
@@ -20,12 +20,12 @@ use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
 use ZnUser\Confirm\Domain\Interfaces\Services\ConfirmServiceInterface;
 use ZnUser\Authentication\Domain\Interfaces\Services\CredentialServiceInterface;
 use ZnLib\Components\Time\Enums\TimeEnum;
-use ZnCore\Entity\Exceptions\AlreadyExistsException;
-use ZnCore\Entity\Exceptions\NotFoundException;
+use ZnDomain\Entity\Exceptions\AlreadyExistsException;
+use ZnDomain\Entity\Exceptions\NotFoundException;
 use ZnLib\I18Next\Facades\I18Next;
 use ZnDomain\Service\Base\BaseService;
-use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Validation\Helpers\ValidationHelper;
+use ZnDomain\Validator\Exceptions\UnprocessibleEntityException;
+use ZnDomain\Validator\Helpers\ValidationHelper;
 use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
 
