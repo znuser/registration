@@ -2,32 +2,30 @@
 
 namespace ZnUser\Registration\Domain\Services;
 
-use App\Common\Enums\Rbac\ApplicationRoleEnum;
-use ZnDomain\Validator\Helpers\UnprocessableHelper;
-use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
-use ZnUser\Registration\Domain\Forms\CreateAccountForm;
-use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
-use ZnUser\Registration\Domain\Interfaces\Services\RegistrationServiceInterface;
 use Symfony\Component\PasswordHasher\PasswordHasherInterface;
 use ZnBundle\Notify\Domain\Entities\EmailEntity;
 use ZnBundle\Notify\Domain\Entities\SmsEntity;
 use ZnBundle\Notify\Domain\Interfaces\Services\EmailServiceInterface;
 use ZnBundle\Notify\Domain\Interfaces\Services\SmsServiceInterface;
-use ZnUser\Confirm\Domain\Entities\ConfirmEntity;
-use ZnUser\Authentication\Domain\Entities\CredentialEntity;
-use ZnUser\Confirm\Domain\Enums\ConfirmActionEnum;
-use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
-use ZnUser\Confirm\Domain\Interfaces\Services\ConfirmServiceInterface;
-use ZnUser\Authentication\Domain\Interfaces\Services\CredentialServiceInterface;
-use ZnLib\Components\Time\Enums\TimeEnum;
-use ZnDomain\Entity\Exceptions\AlreadyExistsException;
 use ZnCore\Contract\Common\Exceptions\NotFoundException;
-use ZnLib\I18Next\Facades\I18Next;
-use ZnDomain\Service\Base\BaseService;
-use ZnDomain\Validator\Exceptions\UnprocessibleEntityException;
-use ZnDomain\Validator\Helpers\ValidationHelper;
+use ZnCore\Contract\User\Interfaces\Entities\IdentityEntityInterface;
+use ZnDomain\Entity\Exceptions\AlreadyExistsException;
 use ZnDomain\EntityManager\Interfaces\EntityManagerInterface;
+use ZnDomain\Service\Base\BaseService;
+use ZnDomain\Validator\Helpers\UnprocessableHelper;
+use ZnDomain\Validator\Helpers\ValidationHelper;
+use ZnLib\Components\Time\Enums\TimeEnum;
+use ZnLib\I18Next\Facades\I18Next;
+use ZnUser\Authentication\Domain\Entities\CredentialEntity;
+use ZnUser\Authentication\Domain\Interfaces\Services\CredentialServiceInterface;
+use ZnUser\Confirm\Domain\Entities\ConfirmEntity;
+use ZnUser\Confirm\Domain\Enums\ConfirmActionEnum;
+use ZnUser\Confirm\Domain\Interfaces\Services\ConfirmServiceInterface;
 use ZnUser\Rbac\Domain\Entities\AssignmentEntity;
+use ZnUser\Rbac\Domain\Enums\Rbac\SystemRoleEnum;
+use ZnUser\Registration\Domain\Forms\CreateAccountForm;
+use ZnUser\Registration\Domain\Forms\RequestActivationCodeForm;
+use ZnUser\Registration\Domain\Interfaces\Services\RegistrationServiceInterface;
 
 class RegistrationService extends BaseService implements RegistrationServiceInterface
 {
@@ -130,7 +128,8 @@ class RegistrationService extends BaseService implements RegistrationServiceInte
         dd($registrationForm);*/
     }
 
-    protected function checkCredentialExists($registrationForm) {
+    protected function checkCredentialExists($registrationForm)
+    {
         $hasByEmail = $registrationForm->getEmail() && $this->credentialService->hasByCredentialValue($registrationForm->getEmail());
         $hasByPhone = $registrationForm->getPhone() && $this->credentialService->hasByCredentialValue($registrationForm->getPhone());
 
